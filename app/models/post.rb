@@ -5,3 +5,7 @@ class Post < ActiveRecord::Base
   validates :category, inclusion: %w{Fiction Non-Fiction}
   validates :clickbaity_title
 end
+
+def clickbaity_title
+  if title.present && !title.include("Wont Believe", "Secret", "Top[number]", "Guess")
+end
