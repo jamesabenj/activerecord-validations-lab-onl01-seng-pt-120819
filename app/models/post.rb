@@ -7,7 +7,7 @@ class Post < ActiveRecord::Base
 end
 
 def clickbaity_title
-  if title.present && !title.include("Wont Believe", "Secret", "Top[number]", "Guess")
+  if title.present? && !title.include("Wont Believe", "Secret", "Top[number]", "Guess")
     errors.add(:title, "isn't clickbaity enough")
   end
 end
