@@ -3,7 +3,7 @@ class Post < ActiveRecord::Base
   validates :content, length: { minimum: 250}
   validates :summary, length: { maximum: 250}
   validates :category, inclusion: %w{Fiction Non-Fiction}
-  validates :clickbaity_title
+  validate :clickbaity_title
 end
 
 def clickbaity_title
